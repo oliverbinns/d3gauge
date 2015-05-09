@@ -1,77 +1,93 @@
-function drawGauge(gaugeRadius,minVal,maxVal,needleVal,tickSpaceMinVal,tickSpaceMajVal, vizBoxID, gaugeUnits) {
-    //Set defaults if not supplied
-    if(gaugeRadius==undefined){gaugeRadius=200}
-    if(minVal==undefined){minVal=200}
-    if(maxVal==undefined){maxVal=300}
-    if(tickSpaceMinVal==undefined){tickSpaceMinVal=1}
-    if(tickSpaceMajVal==undefined){tickSpaceMajVal=10}
-    if(vizBoxID==undefined){vizBoxID="vizBox"}
-    if(needleVal==undefined)(needleVal=CONFIGsave.zeroNeedleAngle[0]*1)
-    if(gaugeUnits==undefined)(gaugeUnits="€/t")
+function drawGauge(opt) {
+    // Set defaults if not supplied
+    if(typeof opt === 'undefined')                  {var opt={}}
+    if(typeof opt.gaugeRadius === 'undefined')      {opt.gaugeRadius=200}
+    if(typeof opt.minVal === 'undefined')           {opt.minVal=200}
+    if(typeof opt.maxVal === 'undefined')           {opt.maxVal=300}
+    if(typeof opt.tickSpaceMinVal === 'undefined')  {opt.tickSpaceMinVal=1}
+    if(typeof opt.tickSpaceMajVal === 'undefined')  {opt.tickSpaceMajVal=10}
+    if(typeof opt.divID === 'undefined')            {opt.divID="vizBox"}
+    if(typeof opt.needleVal === 'undefined')        {opt.needleVal=60}
+    if(typeof opt.gaugeUnits === 'undefined')       {opt.gaugeUnits=" "}
+    
+    if(typeof opt.padding === 'undefined')          {opt.padding=0.05}
+    if(typeof opt.edgeWidth === 'undefined')        {opt.edgeWidth=0.05}
+    if(typeof opt.tickEdgeGap === 'undefined')      {opt.tickEdgeGap=0.05}
+    if(typeof opt.tickLengthMaj === 'undefined')    {opt.tickLengthMaj=0.15}
+    if(typeof opt.tickLengthMin === 'undefined')    {opt.tickLengthMin=0.05}
+    if(typeof opt.needleTickGap === 'undefined')    {opt.needleTickGap=0.05}
+    if(typeof opt.needleLengthNeg === 'undefined')  {opt.needleLengthNeg=0.2}
+    if(typeof opt.pivotRadius === 'undefined')      {opt.pivotRadius=0.1}
+
+    if(typeof opt.ticknessGaugeBasis === 'undefined') {opt.ticknessGaugeBasis=200}
+    if(typeof opt.needleWidth === 'undefined')      {opt.needleWidth=5}
+    if(typeof opt.tickWidthMaj === 'undefined')     {opt.tickWidthMaj=3}
+    if(typeof opt.tickWidthMin === 'undefined')     {opt.tickWidthMin=1}
+    if(typeof opt.labelFontSize === 'undefined')    {opt.labelFontSize=18}
+    if(typeof opt.zeroTickAngle === 'undefined')    {opt.zeroTickAngle=60}
+    if(typeof opt.maxTickAngle === 'undefined')     {opt.maxTickAngle=300}
+    if(typeof opt.zeroNeedleAngle === 'undefined')  {opt.zeroNeedleAngle=40}
+    if(typeof opt.maxNeedleAngle === 'undefined')   {opt.maxNeedleAngle=320}
+
+
+    // Calculate absolute values
+    opt.padding = opt.padding * opt.gaugeRadius,
+    opt.edgeWidth = opt.edgeWidth * opt.gaugeRadius,
+    opt.tickEdgeGap = opt.tickEdgeGap * opt.gaugeRadius,
+    opt.tickLengthMaj = opt.tickLengthMaj * opt.gaugeRadius,
+    opt.tickLengthMin = opt.tickLengthMin * opt.gaugeRadius,
+    opt.needleTickGap = opt.needleTickGap * opt.gaugeRadius,
+    opt.needleLengthNeg = opt.needleLengthNeg * opt.gaugeRadius,
+    opt.pivotRadius = opt.pivotRadius * opt.gaugeRadius;
+
+    opt.needleWidth = opt.needleWidth * (opt.gaugeRadius/opt.ticknessGaugeBasis),
+    opt.tickWidthMaj = opt.tickWidthMaj * (opt.gaugeRadius/opt.ticknessGaugeBasis),
+    opt.tickWidthMin = opt.tickWidthMin * (opt.gaugeRadius/opt.ticknessGaugeBasis),
+    opt.labelFontSize = opt.labelFontSize * (opt.gaugeRadius/opt.ticknessGaugeBasis);
     
 
-    //Get fixed configuration items
-    var padding=CONFIGsave.padding[0]*gaugeRadius,
-        edgeWidth=CONFIGsave.edgeWidth[0]*gaugeRadius,
-        tickEdgeGap=CONFIGsave.tickEdgeGap[0]*gaugeRadius,
-        tickLengthMaj=CONFIGsave.tickLengthMaj[0]*gaugeRadius,
-        tickLengthMin=CONFIGsave.tickLengthMin[0]*gaugeRadius,
-        needleTickGap=CONFIGsave.needleTickGap[0]*gaugeRadius,
-        needleLengthNeg=CONFIGsave.needleLengthNeg[0]*gaugeRadius,
-        pivotRadius=CONFIGsave.pivotRadius[0]*gaugeRadius,
-        ticknessGaugeBasis=CONFIGsave.ticknessGaugeBasis[0]*1,
-        needleWidth=CONFIGsave.needleWidth[0]*(gaugeRadius/ticknessGaugeBasis),
-        tickWidthMaj=CONFIGsave.tickWidthMaj[0]*(gaugeRadius/ticknessGaugeBasis),
-        tickWidthMin=CONFIGsave.tickWidthMin[0]*(gaugeRadius/ticknessGaugeBasis),
-        labelFontSize=CONFIGsave.labelFontSize[0]*(gaugeRadius/ticknessGaugeBasis),
-        zeroTickAngle=CONFIGsave.zeroTickAngle[0]*1,
-        maxTickAngle=CONFIGsave.maxTickAngle[0]*1,
-        zeroNeedleAngle=CONFIGsave.zeroNeedleAngle[0]*1,
-        maxNeedleAngle=CONFIGsave.maxNeedleAngle[0]*1;
-    
     //Calculate required values
-    var needleLengthPos=gaugeRadius-padding-edgeWidth-tickEdgeGap-tickLengthMaj-needleTickGap,
-        needlePathLength=needleLengthNeg+needleLengthPos,
-        needlePathStart=needleLengthNeg*(-1),
-        tickStartMaj = gaugeRadius-padding-edgeWidth-tickEdgeGap-tickLengthMaj,
-        tickStartMin = gaugeRadius-padding-edgeWidth-tickEdgeGap-tickLengthMin,
-        labelStart=tickStartMaj-labelFontSize,
-        innerEdgeRadius = gaugeRadius-padding-edgeWidth,
-        outerEdgeRadius = gaugeRadius-padding,
-        originX=gaugeRadius,
-        originY=gaugeRadius;
+    var needleLengthPos = opt.gaugeRadius - opt.padding - opt.edgeWidth - opt.tickEdgeGap - opt.tickLengthMaj - opt.needleTickGap,
+        needlePathLength = opt.needleLengthNeg + needleLengthPos,
+        needlePathStart = opt.needleLengthNeg * (-1),
+        tickStartMaj = opt.gaugeRadius - opt.padding - opt.edgeWidth - opt.tickEdgeGap - opt.tickLengthMaj,
+        tickStartMin = opt.gaugeRadius - opt.padding - opt.edgeWidth - opt.tickEdgeGap - opt.tickLengthMin,
+        labelStart = tickStartMaj - opt.labelFontSize,
+        innerEdgeRadius = opt.gaugeRadius - opt.padding - opt.edgeWidth,
+        outerEdgeRadius = opt.gaugeRadius - opt.padding,
+        originX = opt.gaugeRadius,
+        originY = opt.gaugeRadius;
     
-    if(labelFontSize<6){labelFontSize=0}
+    if(opt.labelFontSize < 6){opt.labelFontSize = 0}
         
     //Define a linear scale to convert values to needle displacement angle (degrees)
     var valueScale = d3.scale.linear()
-            .domain([minVal,maxVal])
-            .range([zeroTickAngle,maxTickAngle]);
+            .domain([opt.minVal, opt.maxVal])
+            .range([opt.zeroTickAngle, opt.maxTickAngle]);
     
     //Calculate tick mark angles (degrees)
-    var counter=0,
-        tickAnglesMaj=[],
-        tickAnglesMin=[],
-        tickSpacingMajDeg = valueScale(tickSpaceMajVal)-valueScale(0),
-        tickSpacingMinDeg = valueScale(tickSpaceMinVal)-valueScale(0);
+    var counter = 0,
+        tickAnglesMaj = [],
+        tickAnglesMin = [],
+        tickSpacingMajDeg = valueScale(opt.tickSpaceMajVal) - valueScale(0),
+        tickSpacingMinDeg = valueScale(opt.tickSpaceMinVal) - valueScale(0);
     
-    for (var i=zeroTickAngle;i<=maxTickAngle;i=i+tickSpacingMajDeg)
+    for (var i = opt.zeroTickAngle; i <= opt.maxTickAngle; i = i + tickSpacingMajDeg)
         { 
-            tickAnglesMaj.push(zeroTickAngle+(tickSpacingMajDeg*counter))
+            tickAnglesMaj.push(opt.zeroTickAngle + (tickSpacingMajDeg * counter))
             counter++
         }
     
-    counter=0
-    
-    for (var i=zeroTickAngle;i<=maxTickAngle;i=i+tickSpacingMinDeg)
+    counter = 0
+    for (var i=opt.zeroTickAngle; i <= opt.maxTickAngle; i = i + tickSpacingMinDeg)
         { 
             //Check for an existing major tick angle
-            var exists=0
+            var exists = 0
             tickAnglesMaj.forEach(function(d){
-                if((zeroTickAngle+(tickSpacingMinDeg*counter))==d){exists=1}
+                if((opt.zeroTickAngle + (tickSpacingMinDeg * counter))==d){exists=1}
             })
             
-            if(exists==0){tickAnglesMin.push(zeroTickAngle+(tickSpacingMinDeg*counter))}
+            if(exists == 0){tickAnglesMin.push(opt.zeroTickAngle + (tickSpacingMinDeg * counter))}
             counter++
         }
 
@@ -80,30 +96,22 @@ function drawGauge(gaugeRadius,minVal,maxVal,needleVal,tickSpaceMinVal,tickSpace
     counter=0
     var tickLabelText=[];
     
-    for (var i=zeroTickAngle;i<=maxTickAngle;i=i+tickSpacingMajDeg)
+    for (var i = opt.zeroTickAngle; i <= opt.maxTickAngle; i = i + tickSpacingMajDeg)
         { 
-            tickLabelText.push(minVal+(tickSpaceMajVal*counter))
+            tickLabelText.push(opt.minVal + (opt.tickSpaceMajVal * counter))
             counter++
         }    
     
-    
-    //Clear any existing SVG content from the holder
-    $("#SVGbox-"+vizBoxID).remove();
-    
-    
     //Add the svg content holder to the visualisation box element in the document (vizbox)
-    var svgWidth=gaugeRadius*2,
-        svgHeight=gaugeRadius*2;
-        
-
+    var svgWidth=opt.gaugeRadius * 2,
+        svgHeight=opt.gaugeRadius * 2;
     
-    var svg = d3.select("#"+vizBoxID)
+    var svg = d3.select("#" + opt.divID)
         .append("svg")
-        .attr("id", "SVGbox-"+vizBoxID)
+        .attr("id", "SVGbox-" + opt.divID)
         .attr("width", svgWidth)
         .attr("height", svgHeight)
         .attr({'xmlns': 'http://www.w3.org/2000/svg','xmlns:xmlns:xlink': 'http://www.w3.org/1999/xlink'});
-    
     
     //Draw the circles that make up the edge of the gauge
     var circleGroup = svg.append("svg:g")
@@ -125,7 +133,7 @@ function drawGauge(gaugeRadius,minVal,maxVal,needleVal,tickSpaceMinVal,tickSpace
     var pivotC = circleGroup.append("svg:circle")
             .attr("cx", originX)
             .attr("cy", originY)
-            .attr("r", pivotRadius)
+            .attr("r", opt.pivotRadius)
             .style("fill", "#999")
             .style("stroke", "none");
     
@@ -134,22 +142,22 @@ function drawGauge(gaugeRadius,minVal,maxVal,needleVal,tickSpaceMinVal,tickSpace
     tickCalcMaj = function() {	
         function pathCalc(d,i) {
             //Offset the tick mark angle so zero is vertically down, then convert to radians
-            var tickAngle=d+90,
-                tickAngleRad=dToR(tickAngle);
+            var tickAngle = d + 90,
+                tickAngleRad = dToR(tickAngle);
 
-            var y1=originY+(tickStartMaj*Math.sin(tickAngleRad)),
-                y2=originY+((tickStartMaj+tickLengthMaj)*Math.sin(tickAngleRad)),
-                x1=originX+(tickStartMaj*Math.cos(tickAngleRad)),
-                x2=originX+((tickStartMaj+tickLengthMaj)*Math.cos(tickAngleRad)),
+            var y1 = originY + (tickStartMaj * Math.sin(tickAngleRad)),
+                y2 = originY + ((tickStartMaj + opt.tickLengthMaj) * Math.sin(tickAngleRad)),
+                x1 = originX + (tickStartMaj * Math.cos(tickAngleRad)),
+                x2 = originX + ((tickStartMaj + opt.tickLengthMaj) * Math.cos(tickAngleRad)),
                 
                 lineData = [{"x": x1, "y": y1}, {"x": x2, "y": y2}];
 
             //Use a D3.JS path generator
-            var lineFunc=d3.svg.line()
-                .x(function(d) { return d.x; })
-                .y(function(d) { return d.y; });
+            var lineFunc = d3.svg.line()
+                .x(function(d) {return d.x;})
+                .y(function(d) {return d.y;});
 
-            var lineSVG=lineFunc(lineData)
+            var lineSVG = lineFunc(lineData)
 
             return lineSVG
         }
@@ -159,29 +167,29 @@ function drawGauge(gaugeRadius,minVal,maxVal,needleVal,tickSpaceMinVal,tickSpace
     tickCalcMin = function() {	
         function pathCalc(d,i) {
             //Offset the tick mark angle so zero is vertically down, then convert to radians
-            var tickAngle=d+90,
-                tickAngleRad=dToR(tickAngle);
+            var tickAngle = d + 90,
+                tickAngleRad = dToR(tickAngle);
 
-            var y1=originY+(tickStartMin*Math.sin(tickAngleRad)),
-                y2=originY+((tickStartMin+tickLengthMin)*Math.sin(tickAngleRad)),
-                x1=originX+(tickStartMin*Math.cos(tickAngleRad)),
-                x2=originX+((tickStartMin+tickLengthMin)*Math.cos(tickAngleRad)),
+            var y1 = originY + (tickStartMin * Math.sin(tickAngleRad)),
+                y2 = originY + ((tickStartMin + opt.tickLengthMin) * Math.sin(tickAngleRad)),
+                x1 = originX + (tickStartMin * Math.cos(tickAngleRad)),
+                x2 = originX + ((tickStartMin + opt.tickLengthMin) * Math.cos(tickAngleRad)),
                 
                 lineData = [{"x": x1, "y": y1}, {"x": x2, "y": y2}];
 
             //Use a D3.JS path generator
             var lineFunc=d3.svg.line()
-                .x(function(d) { return d.x; })
-                .y(function(d) { return d.y; });
+                .x(function(d) {return d.x;})
+                .y(function(d) {return d.y;});
 
-            var lineSVG=lineFunc(lineData)
+            var lineSVG = lineFunc(lineData)
 
             return lineSVG
         }
         return pathCalc;
     };    
     
-   var pathTickMaj = tickCalcMaj(),
+   var  pathTickMaj = tickCalcMaj(),
         pathTickMin = tickCalcMin();
 
     
@@ -202,41 +210,39 @@ function drawGauge(gaugeRadius,minVal,maxVal,needleVal,tickSpaceMinVal,tickSpace
                 .enter().append("path")
                 .attr("d", pathTickMin)
                 .style("stroke", "#000")
-                .style("stroke-width", tickWidthMin+"px");    
+                .style("stroke-width", opt.tickWidthMin+"px");    
     var tickMaj = ticksMaj.selectAll("path")
                 .data(tickAnglesMaj)
                 .enter().append("path")
                 .attr("d", pathTickMaj)
                 .style("stroke", "#3d7edb")
-                .style("stroke-width", tickWidthMaj+"px");  
+                .style("stroke-width", opt.tickWidthMaj+"px");  
     
-    
-        
     
     //Define functions to calcuate the positions of the labels for the tick marks
     function labelXcalc(d,i){
-        var tickAngle=d+90,
-            tickAngleRad=dToR(tickAngle),
-            labelW=labelFontSize/(tickLabelText[i].toString().length/2)
-            x1=originX+((labelStart-labelW)*Math.cos(tickAngleRad));
+        var tickAngle = d+90,
+            tickAngleRad = dToR(tickAngle),
+            labelW = opt.labelFontSize / (tickLabelText[i].toString().length / 2)
+            x1 = originX + ((labelStart - labelW) * Math.cos(tickAngleRad));
         return x1
     }
     function labelYcalc(d,i){
         var tickAngle=d+90,
             tickAngleRad=dToR(tickAngle),
-            y1=originY+((labelStart)*Math.sin(tickAngleRad))+(labelFontSize/2);        
+            y1 = originY + ((labelStart) * Math.sin(tickAngleRad)) + (opt.labelFontSize/2);        
         return y1
     }    
     
     //Add labels for major tick marks
     var tickLabels = svg.append("svg:g")
-                .attr("id","tickLabels")
+                .attr("id", "tickLabels")
     var tickLabel = tickLabels.selectAll("text")
                 .data(tickAnglesMaj)
                 .enter().append("text")
                 .attr("x",function(d,i){return labelXcalc(d,i)})
                 .attr("y",function(d,i){return labelYcalc(d,i)})	
-                .attr("font-size", labelFontSize) 
+                .attr("font-size", opt.labelFontSize) 
                 .attr("text-anchor", "middle")
                 .style("fill",function(d) {"#000"})
                 .style("font-weight", "bold")
@@ -245,40 +251,39 @@ function drawGauge(gaugeRadius,minVal,maxVal,needleVal,tickSpaceMinVal,tickSpace
     
     //Add label for units
     var unitLabels = svg.append("svg:g")
-                .attr("id","unitLabels")
+                .attr("id", "unitLabels")
     var unitsLabel = unitLabels.selectAll("text")
                 .data([0])
                 .enter().append("text")
                 .attr("x",function(d,i){return labelXcalc(d,i)})
                 .attr("y",function(d,i){return labelYcalc(d,i)})	
-                .attr("font-size", labelFontSize*1.5) 
+                .attr("font-size", opt.labelFontSize * 1.5) 
                 .attr("text-anchor", "middle")
                 .style("fill",function(d) {"#000"})
                 .style("font-weight", "bold")
                 .attr("font-family", '"Myriad Pro", Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif')
-                .text(gaugeUnits)           
+                .text(opt.gaugeUnits)           
 
     //Draw needle
-    var needleAngle=[zeroNeedleAngle]
+    var needleAngle = [opt.zeroNeedleAngle]
     
     //Define a function for calculating the coordinates of the needle paths (see tick mark equivalent)
     needleCalc = function() {	
             function pathCalc(d,i) {
+                var nAngleRad = dToR(d + 90)
                 
-                var nAngleRad=dToR(d+90)
-                
-                var y1=originY+(needlePathStart*Math.sin(nAngleRad)),
-                    y2=originY+((needlePathStart+needlePathLength)*Math.sin(nAngleRad)),
-                    x1=originX+(needlePathStart*Math.cos(nAngleRad)),
-                    x2=originX+((needlePathStart+needlePathLength)*Math.cos(nAngleRad)),
+                var y1 = originY + (needlePathStart * Math.sin(nAngleRad)),
+                    y2 = originY + ((needlePathStart + needlePathLength) * Math.sin(nAngleRad)),
+                    x1 = originX + (needlePathStart * Math.cos(nAngleRad)),
+                    x2 = originX + ((needlePathStart + needlePathLength) * Math.cos(nAngleRad)),
                     
                     lineData = [{"x": x1, "y": y1}, {"x": x2, "y": y2}];
                 
                 var lineFunc=d3.svg.line()
-                    .x(function(d) { return d.x; })
-                    .y(function(d) { return d.y; });
+                    .x(function(d) {return d.x;})
+                    .y(function(d) {return d.y;});
                 
-                var lineSVG=lineFunc(lineData)
+                var lineSVG = lineFunc(lineData)
                 return lineSVG 
             }
         return pathCalc;
@@ -296,7 +301,7 @@ function drawGauge(gaugeRadius,minVal,maxVal,needleVal,tickSpaceMinVal,tickSpace
         .enter().append("path")
         .attr("d", pathNeedle)
         .style("stroke", "#3D7EDB")
-        .style("stroke-width", needleWidth+"px");  
+        .style("stroke-width", opt.needleWidth + "px");  
     
     
     //Animate the transistion of the needle to its starting value
@@ -307,58 +312,51 @@ function drawGauge(gaugeRadius,minVal,maxVal,needleVal,tickSpaceMinVal,tickSpace
         //.attr("transform", function(d) 
         .attrTween("transform", function(d,i,a)
         {
-            needleAngle=valueScale(needleVal)
+            needleAngle=valueScale(opt.needleVal)
             
             //Check for min/max ends of the needle
-            if (needleAngle > maxTickAngle){needleAngle = maxNeedleAngle}
-            if (needleAngle < zeroTickAngle){needleAngle = zeroNeedleAngle}
-            var needleCentre = originX+","+originY,
-                needleRot=needleAngle-zeroNeedleAngle
-            return d3.interpolateString("rotate(0,"+needleCentre+")", "rotate("+needleRot+","+needleCentre+")")
+            if (needleAngle > opt.maxTickAngle){needleAngle = opt.maxNeedleAngle}
+            if (needleAngle < opt.zeroTickAngle){needleAngle = opt.zeroNeedleAngle}
+            var needleCentre = originX + "," + originY,
+                needleRot = needleAngle - opt.zeroNeedleAngle
+            return d3.interpolateString("rotate(0," + needleCentre + ")", "rotate(" + needleRot + "," + needleCentre + ")")
               
         });
 
-    
     unitsLabel.transition()
     .duration(1000)
     .ease("elastic",1,0.9)
     .tween("text", function(d) {
-        var i = d3.interpolateString(minVal, needleVal)
+        var i = d3.interpolateString(opt.minVal, opt.needleVal)
 
         return function(t) {
-            this.textContent = Math.round(i(t))+" "+gaugeUnits;
+            this.textContent = Math.round(i(t)) + " " + opt.gaugeUnits;
         };
     });
     
-    
-    
-    
+    // Function to update the gauge value
     this.updateGauge=function(newVal) {
         //Set default values if necessary
-        if(newVal==undefined)(minVal)
-
+        if(newVal == undefined)(opt.minVal)
 
         //Animate the transistion of the needle to its new value
         var needlePath = needleGroup.selectAll("path"),
-            oldVal=needleVal
+            oldVal = opt.needleVal
         needlePath.transition()
             .duration(1000)
             .ease("elastic",1,0.9)
-            //.delay(0)
-            //.ease("linear")
-            //.attr("transform", function(d) 
             .attrTween("transform", function(d,i,a)
             {
-                needleAngleOld=valueScale(oldVal)-zeroNeedleAngle
-                needleAngleNew=valueScale(newVal)-zeroNeedleAngle
+                needleAngleOld = valueScale(oldVal) - opt.zeroNeedleAngle
+                needleAngleNew = valueScale(newVal) - opt.zeroNeedleAngle
 
                 //Check for min/max ends of the needle
-                if (needleAngleOld+zeroNeedleAngle > maxTickAngle){needleAngleOld = maxNeedleAngle-zeroNeedleAngle}
-                if (needleAngleOld+zeroNeedleAngle < zeroTickAngle){needleAngleOld = 0}
-                if (needleAngleNew+zeroNeedleAngle > maxTickAngle){needleAngleNew = maxNeedleAngle-zeroNeedleAngle}
-                if (needleAngleNew+zeroNeedleAngle < zeroTickAngle){needleAngleNew = 0}
+                if (needleAngleOld + opt.zeroNeedleAngle > opt.maxTickAngle){needleAngleOld = opt.maxNeedleAngle - opt.zeroNeedleAngle}
+                if (needleAngleOld + opt.zeroNeedleAngle < opt.zeroTickAngle){needleAngleOld = 0}
+                if (needleAngleNew + opt.zeroNeedleAngle > opt.maxTickAngle){needleAngleNew = opt.maxNeedleAngle - opt.zeroNeedleAngle}
+                if (needleAngleNew + opt.zeroNeedleAngle < opt.zeroTickAngle){needleAngleNew = 0}
                 var needleCentre = originX+","+originY
-                return d3.interpolateString("rotate("+needleAngleOld+","+needleCentre+")", "rotate("+needleAngleNew+","+needleCentre+")")
+                return d3.interpolateString("rotate(" + needleAngleOld + "," + needleCentre + ")", "rotate(" + needleAngleNew + "," + needleCentre + ")")
 
             });
         
@@ -369,34 +367,17 @@ function drawGauge(gaugeRadius,minVal,maxVal,needleVal,tickSpaceMinVal,tickSpace
                 var i = d3.interpolateString(oldVal, newVal)
                 
                 return function(t) {
-                    this.textContent = Math.round(i(t))+" "+gaugeUnits;
+                    this.textContent = Math.round(i(t)) + " " + opt.gaugeUnits;
                 };
         });
         
         //Update the current value
-        needleVal=newVal
-
-
+        opt.needleVal = newVal
     }
-    
-    this.updateScale=function(newMin,newMax){
-        
-        
-    }
-    
-
-    
-    
-    
-    
-    
 }
-
-
-
 
 function dToR(angleDeg){
     //Turns an angle in degrees to radians
-    var angleRad=angleDeg*(Math.PI/180); 
+    var angleRad = angleDeg * (Math.PI / 180); 
     return angleRad;
 }

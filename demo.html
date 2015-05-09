@@ -7,12 +7,25 @@
 		<script type="text/javascript" src="d3gauge.js" charset="utf-8"></script>
 	</head>
 	<body>
+		<div id="gaugeBox"></div>
 	</body>
 
 	<script > 
+		var gauges  = []
 		document.addEventListener("DOMContentLoaded", function(event) {
-
-		}
+			var opt = {
+				gaugeRadius : 160,
+                minVal : 100,
+                maxVal : 300,
+                needleVal : Math.round(125),
+                tickSpaceMinVal : 2,
+                tickSpaceMajVal : 20, 
+                divID : "gaugeBox", 
+                gaugeUnits : "€/t"
+			} 
+            
+            gauges[0] = new drawGauge(opt); 
+		})
 	</script>
 
 
