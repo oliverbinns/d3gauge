@@ -2,7 +2,7 @@
 
 **d3gauge.js** is an add-in for the [D3](http://d3js.org) javascript library for drawing gauges, based on the [google charts gauge](https://developers.google.com/chart/interactive/docs/gallery/gauge) and [this javascript implementation](http://tomerdoron.blogspot.nl/2011/12/google-style-gauges-using-d3js.html). Every aspect of a d3gauge can be customised by passing an object containing options (see below)
 
-![Example gauge](example.svg "Example gauge")
+![Example gauge](https://raw.githubusercontent.com/oliverbinns/d3gauge/master/example.svg "Example gauge")
 
 ## Usage
 To create a new d3gauge, add a div to your HTML document with a unique id, then call a new gauge object:
@@ -40,7 +40,7 @@ The following options can be set:
 * **needleVal** - The initial value of the needle
 * **gaugeUnits** - The units text, which is placed at the bottom of the gauge
 
-![Example gauge](exampleOverlay.svg "Example gauge")
+![Example gauge](https://raw.githubusercontent.com/oliverbinns/d3gauge/master/exampleOverlay.svg "Example gauge")
 
 
 ### Radial metrics
