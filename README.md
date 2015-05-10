@@ -11,8 +11,8 @@ Styles are set by inline style arguments, rather than CSS classes so that (i) mu
 ## Usage
 Add the d3gauge.js script to your site, along with the latest version of d3:
 ```
-    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-    <script type="text/javascript" src="d3gauge.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="d3gauge.js" charset="utf-8"></script>
 ```
 
 To create a new d3gauge, add a div to your HTML document with a unique id, then call a new gauge object:
@@ -41,8 +41,10 @@ For an example of using the gauge in a web page, see the demo.html file in the r
 ## Options
 The following options can be set:
 
+![Example gauge](https://github.com/oliverbinns/d3gauge/blob/master/docs/exampleOverlay.png "Example gauge")
+
 ### DOM
-*o* **divID** - The div in which to place the gauge
+* **divID** - The div in which to place the gauge
 
 ### Gauge readings
 * **minVal** - The minimum numeric value on the gauge
@@ -51,9 +53,6 @@ The following options can be set:
 * **tickSpaceMajVal** - The numeric spacing of the major increment ticks
 * **needleVal** - The initial value of the needle
 * **gaugeUnits** - The units text, which is placed at the bottom of the gauge
-
-![Example gauge](https://github.com/oliverbinns/d3gauge/blob/master/docs/exampleOverlay.png "Example gauge")
-
 
 ### Radial metrics
 * **gaugeRadius** - The radius of the gauge in pixels
