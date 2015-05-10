@@ -4,7 +4,7 @@
 
 The gauge values can be asily updated, and the needle moves with an 'rubber-band' effect.  The gauge is a javascript object, so it is possible to have multiple gauges in one document.
 
-Styles are set by inline style arguments, rather than CSS classes so that (i) multiple gauges can have different styles and (ii) svg gauges can be saved as images using tools like ![canvg](https://github.com/gabelerner/canvg)
+Styles are set by inline style arguments, rather than CSS classes so that (i) multiple gauges can have different styles and (ii) svg gauges can be saved as images using tools like [canvg](https://github.com/gabelerner/canvg)
 
 ![Example gauge](https://github.com/oliverbinns/d3gauge/blob/master/docs/example.png "Example gauge")
 
