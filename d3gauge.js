@@ -29,6 +29,18 @@ function drawGauge(opt) {
     if(typeof opt.zeroNeedleAngle === 'undefined')  {opt.zeroNeedleAngle=40}
     if(typeof opt.maxNeedleAngle === 'undefined')   {opt.maxNeedleAngle=320}
 
+    if(typeof opt.tickColMaj === 'undefined')       {opt.tickColMaj = '#0099CC'}
+    if(typeof opt.tickColMin === 'undefined')       {opt.tickColMin = '#000'}
+    if(typeof opt.outerEdgeCol === 'undefined')     {opt.outerEdgeCol = '#0099CC'}
+    if(typeof opt.pivotCol === 'undefined')         {opt.pivotCol = '#999'}
+    if(typeof opt.innerCol === 'undefined')         {opt.innerCol = '#fff'}
+    if(typeof opt.unitsLabelCol === 'undefined')    {opt.unitsLabelCol = '#000'}
+    if(typeof opt.tickLabelCol === 'undefined')     {opt.tickLabelCol = '#000'}
+    if(typeof opt.needleCol === 'undefined')        {opt.needleCol = '#0099CC'}
+
+    defaultFonts = '"Helvetica Neue", Helvetica, Arial, sans-serif'
+    if(typeof opt.tickFont === 'undefined')        {opt.tickFont = defaultFonts}
+    if(typeof opt.unitsFont === 'undefined')        {opt.unitsFont = defaultFonts}
 
     // Calculate absolute values
     opt.padding = opt.padding * opt.gaugeRadius,
@@ -120,13 +132,13 @@ function drawGauge(opt) {
             .attr("cx", originX)
             .attr("cy", originY)
             .attr("r", outerEdgeRadius)
-            .style("fill", "#3D7EDB")
+            .style("fill", opt.outerEdgeCol)
             .style("stroke", "none");
     var innerC = circleGroup.append("svg:circle")
             .attr("cx", originX)
             .attr("cy", originY)
             .attr("r", innerEdgeRadius)
-            .style("fill", "#fff")
+            .style("fill", opt.innerCol)
             .style("stroke", "none");
     
     //Draw the circle for the needle 'pivot'
@@ -134,7 +146,7 @@ function drawGauge(opt) {
             .attr("cx", originX)
             .attr("cy", originY)
             .attr("r", opt.pivotRadius)
-            .style("fill", "#999")
+            .style("fill", opt.pivotCol)
             .style("stroke", "none");
     
     
@@ -209,13 +221,13 @@ function drawGauge(opt) {
                 .data(tickAnglesMin)
                 .enter().append("path")
                 .attr("d", pathTickMin)
-                .style("stroke", "#000")
+                .style("stroke", opt.tickColMin)
                 .style("stroke-width", opt.tickWidthMin+"px");    
     var tickMaj = ticksMaj.selectAll("path")
                 .data(tickAnglesMaj)
                 .enter().append("path")
                 .attr("d", pathTickMaj)
-                .style("stroke", "#3d7edb")
+                .style("stroke", opt.tickColMaj)
                 .style("stroke-width", opt.tickWidthMaj+"px");  
     
     
@@ -244,9 +256,9 @@ function drawGauge(opt) {
                 .attr("y",function(d,i){return labelYcalc(d,i)})	
                 .attr("font-size", opt.labelFontSize) 
                 .attr("text-anchor", "middle")
-                .style("fill",function(d) {"#000"})
+                .style("fill", opt.tickLabelCol)
                 .style("font-weight", "bold")
-                .attr("font-family", '"Myriad Pro", Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif')
+                .attr("font-family", opt.tickFont)
                 .text(function(d,i) {return tickLabelText[i]})
     
     //Add label for units
@@ -259,9 +271,9 @@ function drawGauge(opt) {
                 .attr("y",function(d,i){return labelYcalc(d,i)})	
                 .attr("font-size", opt.labelFontSize * 1.5) 
                 .attr("text-anchor", "middle")
-                .style("fill",function(d) {"#000"})
+                .style("fill", opt.unitsLabelCol)
                 .style("font-weight", "bold")
-                .attr("font-family", '"Myriad Pro", Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif')
+                .attr("font-family", opt.unitsFont)
                 .text(opt.gaugeUnits)           
 
     //Draw needle
@@ -300,7 +312,7 @@ function drawGauge(opt) {
         .data(needleAngle)
         .enter().append("path")
         .attr("d", pathNeedle)
-        .style("stroke", "#3D7EDB")
+        .style("stroke", opt.needleCol)
         .style("stroke-width", opt.needleWidth + "px");  
     
     
