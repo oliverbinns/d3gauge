@@ -2,13 +2,13 @@ function drawGauge(opt) {
     // Set defaults if not supplied
     if(typeof opt === 'undefined')                  {var opt={}}
     if(typeof opt.gaugeRadius === 'undefined')      {opt.gaugeRadius=200}
-    if(typeof opt.minVal === 'undefined')           {opt.minVal=200}
-    if(typeof opt.maxVal === 'undefined')           {opt.maxVal=300}
+    if(typeof opt.minVal === 'undefined')           {opt.minVal=0}
+    if(typeof opt.maxVal === 'undefined')           {opt.maxVal=100}
     if(typeof opt.tickSpaceMinVal === 'undefined')  {opt.tickSpaceMinVal=1}
     if(typeof opt.tickSpaceMajVal === 'undefined')  {opt.tickSpaceMajVal=10}
     if(typeof opt.divID === 'undefined')            {opt.divID="vizBox"}
     if(typeof opt.needleVal === 'undefined')        {opt.needleVal=60}
-    if(typeof opt.gaugeUnits === 'undefined')       {opt.gaugeUnits=" "}
+    if(typeof opt.gaugeUnits === 'undefined')       {opt.gaugeUnits="%"}
     
     if(typeof opt.padding === 'undefined')          {opt.padding=0.05}
     if(typeof opt.edgeWidth === 'undefined')        {opt.edgeWidth=0.05}

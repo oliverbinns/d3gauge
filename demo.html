@@ -15,13 +15,13 @@
 		document.addEventListener("DOMContentLoaded", function(event) {
 			var opt = {
 				gaugeRadius : 160,
-                minVal : 100,
-                maxVal : 300,
-                needleVal : Math.round(125),
-                tickSpaceMinVal : 2,
-                tickSpaceMajVal : 20, 
+                minVal : 0,
+                maxVal : 100,
+                needleVal : Math.round(30),
+                tickSpaceMinVal : 1,
+                tickSpaceMajVal : 10, 
                 divID : "gaugeBox", 
-                gaugeUnits : "€/t"
+                gaugeUnits : "%"
 			} 
             
             gauges[0] = new drawGauge(opt); 
