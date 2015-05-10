@@ -2,9 +2,15 @@
 
 **d3gauge.js** is an add-in for the [D3](http://d3js.org) javascript library for drawing gauges, based on the [google charts gauge](https://developers.google.com/chart/interactive/docs/gallery/gauge) and [this javascript implementation](http://tomerdoron.blogspot.nl/2011/12/google-style-gauges-using-d3js.html). Every aspect of a d3gauge can be customised by passing an object containing options (see below)
 
-![Example gauge](https://raw.githubusercontent.com/oliverbinns/d3gauge/master/example.svg "Example gauge")
+![Example gauge](https://github.com/oliverbinns/d3gauge/blob/master/docs/example.png "Example gauge")
 
 ## Usage
+Add the d3gauge.js script to your site, along with the latest version of d3:
+```
+        <script type="text/javascript" src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <script type="text/javascript" src="d3gauge.js" charset="utf-8"></script>
+```
+
 To create a new d3gauge, add a div to your HTML document with a unique id, then call a new gauge object:
 
 ```
@@ -26,6 +32,8 @@ var newValue = 10
 gauges[0].updateGauge(newValue)
 ```
 
+For an example of using the gauge in a web page, see the demo.html file in the repository.
+
 ## Options
 The following options can be set:
 
@@ -40,7 +48,7 @@ The following options can be set:
 * **needleVal** - The initial value of the needle
 * **gaugeUnits** - The units text, which is placed at the bottom of the gauge
 
-![Example gauge](https://raw.githubusercontent.com/oliverbinns/d3gauge/master/exampleOverlay.svg "Example gauge")
+![Example gauge](https://github.com/oliverbinns/d3gauge/blob/master/docs/exampleOverlay.png "Example gauge")
 
 
 ### Radial metrics

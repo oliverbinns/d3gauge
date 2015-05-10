@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="SVGbox-gaugeBox" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="-39 41 400 400" enable-background="new -39 41 400 400" xml:space="preserve">
+<g>
+	<rect x="1" y="81" fill="#FFFFFF" width="320" height="320"/>
+	<g>
+		<polyline fill="none" stroke="#000000" stroke-miterlimit="10" points="321,400 321,401 320,401 		"/>
+		<line fill="none" stroke="#000000" stroke-miterlimit="10" stroke-dasharray="2,2" x1="318" y1="401" x2="3" y2="401"/>
+		<polyline fill="none" stroke="#000000" stroke-miterlimit="10" points="2,401 1,401 1,400 		"/>
+		<line fill="none" stroke="#000000" stroke-miterlimit="10" stroke-dasharray="2,2" x1="1" y1="398" x2="1" y2="83"/>
+		<polyline fill="none" stroke="#000000" stroke-miterlimit="10" points="1,82 1,81 2,81 		"/>
+		<line fill="none" stroke="#000000" stroke-miterlimit="10" stroke-dasharray="2,2" x1="4" y1="81" x2="319" y2="81"/>
+		<polyline fill="none" stroke="#000000" stroke-miterlimit="10" points="320,81 321,81 321,82 		"/>
+		<line fill="none" stroke="#000000" stroke-miterlimit="10" stroke-dasharray="2,2" x1="321" y1="84" x2="321" y2="399"/>
+	</g>
+</g>
+<circle fill="#0099CC" cx="161" cy="241" r="152"/>
+<circle fill="#FFFFFF" cx="161" cy="241" r="144"/>
+<circle fill="#999999" cx="161" cy="241" r="16"/>
+<g id="minorTickMarks">
+	<path stroke="#000000" stroke-width="0.8" d="M47.6,300.3l-7.1,3.7"/>
+	<path stroke="#000000" stroke-width="0.8" d="M45.2,295.5l-7.2,3.4"/>
+	<path stroke="#000000" stroke-width="0.8" d="M43,290.6l-7.4,3.1"/>
+	<path stroke="#000000" stroke-width="0.8" d="M41,285.6l-7.5,2.8"/>
+	<path stroke="#000000" stroke-width="0.8" d="M39.3,280.6l-7.6,2.5"/>
+	<path stroke="#000000" stroke-width="0.8" d="M37.7,275.4l-7.7,2.2"/>
+	<path stroke="#000000" stroke-width="0.8" d="M36.4,270.2l-7.8,1.8"/>
+	<path stroke="#000000" stroke-width="0.8" d="M35.3,265l-7.9,1.5"/>
+	<path stroke="#000000" stroke-width="0.8" d="M34.4,259.7l-7.9,1.2"/>
+	<path stroke="#000000" stroke-width="0.8" d="M33.7,254.4l-8,0.8"/>
+	<path stroke="#000000" stroke-width="0.8" d="M33.3,249l-8,0.5"/>
+	<path stroke="#000000" stroke-width="0.8" d="M33,243.7l-8,0.2"/>
+	<path stroke="#000000" stroke-width="0.8" d="M33,238.3l-8-0.2"/>
+	<path stroke="#000000" stroke-width="0.8" d="M33.3,233l-8-0.5"/>
+	<path stroke="#000000" stroke-width="0.8" d="M33.7,227.6l-8-0.8"/>
+	<path stroke="#000000" stroke-width="0.8" d="M34.4,222.3l-7.9-1.2"/>
+	<path stroke="#000000" stroke-width="0.8" d="M35.3,217l-7.9-1.5"/>
+	<path stroke="#000000" stroke-width="0.8" d="M36.4,211.8l-7.8-1.8"/>
+	<path stroke="#000000" stroke-width="0.8" d="M37.7,206.6l-7.7-2.2"/>
+	<path stroke="#000000" stroke-width="0.8" d="M39.3,201.4l-7.6-2.5"/>
+	<path stroke="#000000" stroke-width="0.8" d="M41,196.4l-7.5-2.8"/>
+	<path stroke="#000000" stroke-width="0.8" d="M43,191.4l-7.4-3.1"/>
+	<path stroke="#000000" stroke-width="0.8" d="M45.2,186.5l-7.2-3.4"/>
+	<path stroke="#000000" stroke-width="0.8" d="M47.6,181.7l-7.1-3.7"/>
+	<path stroke="#000000" stroke-width="0.8" d="M50.1,177l-6.9-4"/>
+	<path stroke="#000000" stroke-width="0.8" d="M52.9,172.4l-6.8-4.3"/>
+	<path stroke="#000000" stroke-width="0.8" d="M55.9,167.9l-6.6-4.6"/>
+	<path stroke="#000000" stroke-width="0.8" d="M59,163.6l-6.4-4.8"/>
+	<path stroke="#000000" stroke-width="0.8" d="M62.4,159.4l-6.2-5.1"/>
+	<path stroke="#000000" stroke-width="0.8" d="M65.9,155.4l-5.9-5.4"/>
+	<path stroke="#000000" stroke-width="0.8" d="M69.5,151.4l-5.7-5.6"/>
+	<path stroke="#000000" stroke-width="0.8" d="M73.4,147.7l-5.5-5.8"/>
+	<path stroke="#000000" stroke-width="0.8" d="M77.4,144.1l-5.2-6.1"/>
+	<path stroke="#000000" stroke-width="0.8" d="M81.5,140.7l-5-6.3"/>
+	<path stroke="#000000" stroke-width="0.8" d="M85.8,137.4l-4.7-6.5"/>
+	<path stroke="#000000" stroke-width="0.8" d="M90.2,134.4l-4.4-6.7"/>
+	<path stroke="#000000" stroke-width="0.8" d="M94.7,131.5l-4.1-6.8"/>
+	<path stroke="#000000" stroke-width="0.8" d="M99.3,128.8l-3.9-7"/>
+	<path stroke="#000000" stroke-width="0.8" d="M104.1,126.3l-3.6-7.2"/>
+	<path stroke="#000000" stroke-width="0.8" d="M108.9,124.1l-3.3-7.3"/>
+	<path stroke="#000000" stroke-width="0.8" d="M113.9,122l-2.9-7.4"/>
+	<path stroke="#000000" stroke-width="0.8" d="M118.9,120.1l-2.6-7.6"/>
+	<path stroke="#000000" stroke-width="0.8" d="M124,118.5l-2.3-7.7"/>
+	<path stroke="#000000" stroke-width="0.8" d="M129.2,117l-2-7.7"/>
+	<path stroke="#000000" stroke-width="0.8" d="M134.4,115.8l-1.7-7.8"/>
+	<path stroke="#000000" stroke-width="0.8" d="M139.7,114.8l-1.3-7.9"/>
+	<path stroke="#000000" stroke-width="0.8" d="M145,114l-1-7.9"/>
+	<path stroke="#000000" stroke-width="0.8" d="M150.3,113.4l-0.7-8"/>
+	<path stroke="#000000" stroke-width="0.8" d="M155.6,113.1l-0.3-8"/>
+	<path stroke="#000000" stroke-width="0.8" d="M161,113v-8"/>
+	<path stroke="#000000" stroke-width="0.8" d="M166.4,113.1l0.3-8"/>
+	<path stroke="#000000" stroke-width="0.8" d="M171.7,113.4l0.7-8"/>
+	<path stroke="#000000" stroke-width="0.8" d="M177,114l1-7.9"/>
+	<path stroke="#000000" stroke-width="0.8" d="M182.3,114.8l1.3-7.9"/>
+	<path stroke="#000000" stroke-width="0.8" d="M187.6,115.8l1.7-7.8"/>
+	<path stroke="#000000" stroke-width="0.8" d="M192.8,117l2-7.7"/>
+	<path stroke="#000000" stroke-width="0.8" d="M198,118.5l2.3-7.7"/>
+	<path stroke="#000000" stroke-width="0.8" d="M203.1,120.1l2.6-7.6"/>
+	<path stroke="#000000" stroke-width="0.8" d="M208.1,122l2.9-7.4"/>
+	<path stroke="#000000" stroke-width="0.8" d="M213.1,124.1l3.3-7.3"/>
+	<path stroke="#000000" stroke-width="0.8" d="M217.9,126.3l3.6-7.2"/>
+	<path stroke="#000000" stroke-width="0.8" d="M222.7,128.8l3.9-7"/>
+	<path stroke="#000000" stroke-width="0.8" d="M227.3,131.5l4.1-6.8"/>
+	<path stroke="#000000" stroke-width="0.8" d="M231.8,134.4l4.4-6.7"/>
+	<path stroke="#000000" stroke-width="0.8" d="M236.2,137.4l4.7-6.5"/>
+	<path stroke="#000000" stroke-width="0.8" d="M240.5,140.7l5-6.3"/>
+	<path stroke="#000000" stroke-width="0.8" d="M244.6,144.1l5.2-6.1"/>
+	<path stroke="#000000" stroke-width="0.8" d="M248.6,147.7l5.5-5.8"/>
+	<path stroke="#000000" stroke-width="0.8" d="M252.5,151.4l5.7-5.6"/>
+	<path stroke="#000000" stroke-width="0.8" d="M256.1,155.4l5.9-5.4"/>
+	<path stroke="#000000" stroke-width="0.8" d="M259.6,159.4l6.2-5.1"/>
+	<path stroke="#000000" stroke-width="0.8" d="M263,163.6l6.4-4.8"/>
+	<path stroke="#000000" stroke-width="0.8" d="M266.1,167.9l6.6-4.6"/>
+	<path stroke="#000000" stroke-width="0.8" d="M269.1,172.4l6.8-4.3"/>
+	<path stroke="#000000" stroke-width="0.8" d="M271.9,177l6.9-4"/>
+	<path stroke="#000000" stroke-width="0.8" d="M274.4,181.7l7.1-3.7"/>
+	<path stroke="#000000" stroke-width="0.8" d="M276.8,186.5l7.2-3.4"/>
+	<path stroke="#000000" stroke-width="0.8" d="M279,191.4l7.4-3.1"/>
+	<path stroke="#000000" stroke-width="0.8" d="M281,196.4l7.5-2.8"/>
+	<path stroke="#000000" stroke-width="0.8" d="M282.7,201.4l7.6-2.5"/>
+	<path stroke="#000000" stroke-width="0.8" d="M284.3,206.6l7.7-2.2"/>
+	<path stroke="#000000" stroke-width="0.8" d="M285.6,211.8l7.8-1.8"/>
+	<path stroke="#000000" stroke-width="0.8" d="M286.7,217l7.9-1.5"/>
+	<path stroke="#000000" stroke-width="0.8" d="M287.6,222.3l7.9-1.2"/>
+	<path stroke="#000000" stroke-width="0.8" d="M288.3,227.6l8-0.8"/>
+	<path stroke="#000000" stroke-width="0.8" d="M288.7,233l8-0.5"/>
+	<path stroke="#000000" stroke-width="0.8" d="M289,238.3l8-0.2"/>
+	<path stroke="#000000" stroke-width="0.8" d="M289,243.7l8,0.2"/>
+	<path stroke="#000000" stroke-width="0.8" d="M288.7,249l8,0.5"/>
+	<path stroke="#000000" stroke-width="0.8" d="M288.3,254.4l8,0.8"/>
+	<path stroke="#000000" stroke-width="0.8" d="M287.6,259.7l7.9,1.2"/>
+	<path stroke="#000000" stroke-width="0.8" d="M286.7,265l7.9,1.5"/>
+	<path stroke="#000000" stroke-width="0.8" d="M285.6,270.2l7.8,1.8"/>
+	<path stroke="#000000" stroke-width="0.8" d="M284.3,275.4l7.7,2.2"/>
+	<path stroke="#000000" stroke-width="0.8" d="M282.7,280.6l7.6,2.5"/>
+	<path stroke="#000000" stroke-width="0.8" d="M281,285.6l7.5,2.8"/>
+	<path stroke="#000000" stroke-width="0.8" d="M279,290.6l7.4,3.1"/>
+	<path stroke="#000000" stroke-width="0.8" d="M276.8,295.5l7.2,3.4"/>
+	<path stroke="#000000" stroke-width="0.8" d="M274.4,300.3l7.1,3.7"/>
+	<path stroke="#000000" stroke-width="0.8" d="M271.9,305l6.9,4"/>
+</g>
+<g id="majorTickMarks">
+	<path stroke="#0099CC" stroke-width="2.4" d="M64,297l-20.8,12"/>
+	<path stroke="#0099CC" stroke-width="2.4" d="M49.6,252.7l-23.9,2.5"/>
+	<path stroke="#0099CC" stroke-width="2.4" d="M54.5,206.4L31.7,199"/>
+	<path stroke="#0099CC" stroke-width="2.4" d="M77.8,166.1L59.9,150"/>
+	<path stroke="#0099CC" stroke-width="2.4" d="M115.4,138.7l-9.8-21.9"/>
+	<path stroke="#0099CC" stroke-width="2.4" d="M161,129v-24"/>
+	<path stroke="#0099CC" stroke-width="2.4" d="M206.6,138.7l9.8-21.9"/>
+	<path stroke="#0099CC" stroke-width="2.4" d="M244.2,166.1l17.8-16.1"/>
+	<path stroke="#0099CC" stroke-width="2.4" d="M267.5,206.4l22.8-7.4"/>
+	<path stroke="#0099CC" stroke-width="2.4" d="M272.4,252.7l23.9,2.5"/>
+	<path stroke="#0099CC" stroke-width="2.4" d="M258,297l20.8,12"/>
+</g>
+<text transform="matrix(1 0 0 1 97.4142 297)" font-family="'HelveticaNeue-Bold'" font-size="14.4">0</text>
+<text transform="matrix(1 0 0 1 70.2494 258.402)" font-family="'HelveticaNeue-Bold'" font-size="14.4">10</text>
+<text transform="matrix(1 0 0 1 73.8657 218.0399)" font-family="'HelveticaNeue-Bold'" font-size="14.4">20</text>
+<text transform="matrix(1 0 0 1 91.164 182.8929)" font-family="'HelveticaNeue-Bold'" font-size="14.4">30</text>
+<text transform="matrix(1 0 0 1 152.9936 150.6)" font-family="'HelveticaNeue-Bold'" font-size="14.4">50</text>
+<text transform="matrix(1 0 0 1 186.8341 159.038)" font-family="'HelveticaNeue-Bold'" font-size="14.4">60</text>
+<text transform="matrix(1 0 0 1 214.8232 182.8929)" font-family="'HelveticaNeue-Bold'" font-size="14.4">70</text>
+<text transform="matrix(1 0 0 1 232.1215 218.0399)" font-family="'HelveticaNeue-Bold'" font-size="14.4">80</text>
+<text transform="matrix(1 0 0 1 235.7378 258.402)" font-family="'HelveticaNeue-Bold'" font-size="14.4">90</text>
+<text transform="matrix(1 0 0 1 225.2006 297)" font-family="'HelveticaNeue-Bold'" font-size="14.4">100</text>
+<text transform="matrix(1 0 0 1 135.188 345.8)" font-family="'HelveticaNeue-Bold'" font-size="21.6">30 %</text>
+<path stroke="#0099CC" stroke-width="4" d="M184.8,262.4l-101.1-91"/>
+<text transform="matrix(1 0 0 1 -29.337 59.8132)" fill="#E90000" font-family="'Menlo-Regular'" font-size="10">padding</text>
+<line fill="none" stroke="#E90020" stroke-miterlimit="10" x1="1" y1="79.8" x2="1" y2="65"/>
+<line fill="none" stroke="#E90000" stroke-miterlimit="10" x1="8.7" y1="243.1" x2="8.7" y2="65"/>
+<g>
+	<g>
+		<line fill="none" stroke="#E90020" stroke-miterlimit="10" x1="16.3" y1="69.8" x2="153.7" y2="69.8"/>
+		<g>
+			<polygon fill="#E90020" points="9.3,69.8 19.2,73.9 16.9,69.8 19.2,65.8 			"/>
+		</g>
+		<g>
+			<polygon fill="#E90020" points="160.8,69.8 150.8,73.9 153.2,69.8 150.8,65.8 			"/>
+		</g>
+	</g>
+</g>
+<line fill="none" stroke="#E90020" stroke-miterlimit="10" x1="161" y1="105.5" x2="161" y2="62.6"/>
+<g>
+	<g>
+		<line fill="none" stroke="#E90020" stroke-miterlimit="10" x1="-15.9" y1="69.6" x2="-6.7" y2="69.6"/>
+		<g>
+			<polygon fill="#E90020" points="0.3,69.6 -9.6,73.6 -7.3,69.6 -9.6,65.5 			"/>
+		</g>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 48.2777 63.4698)" fill="#E90000" font-family="'Menlo-Regular'" font-size="10">gaugeRadius</text>
+<g>
+	<g>
+		<line fill="none" stroke="#E90000" stroke-miterlimit="10" x1="50.7" y1="114.1" x2="57.8" y2="121.3"/>
+		<g>
+			<path fill="#E90000" d="M62.1,125.5c-2.8-1.3-6.5-2.5-9.4-2.7l4.6-2.1l2.1-4.6C59.6,119,60.8,122.8,62.1,125.5z"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<line fill="none" stroke="#E90000" stroke-miterlimit="10" x1="72.7" y1="136.3" x2="79.1" y2="142.7"/>
+		<g>
+			<polygon fill="#E90000" points="67.7,131.3 71.9,141.3 73.1,136.7 77.6,135.5 			"/>
+		</g>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 26.9646 109.8973)" fill="#E90000" font-family="'Menlo-Regular'" font-size="10">edgeWidth</text>
+<text transform="matrix(1 0 0 1 77.1571 89.5485)" fill="#E90000" font-family="'Menlo-Regular'" font-size="10">tickEdgeGap</text>
+<g>
+	<g>
+		<line fill="none" stroke="#E90000" stroke-miterlimit="10" x1="121.4" y1="126.3" x2="119.2" y2="120"/>
+		<g>
+			<polygon fill="#E90000" points="116.8,113.4 124,121.3 119.3,120.5 116.3,124.1 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<line fill="none" stroke="#E90000" stroke-miterlimit="10" x1="112.2" y1="98.6" x2="109.9" y2="92.3"/>
+		<g>
+			<polygon fill="#E90000" points="114.6,105.2 115,94.5 112,98.1 107.4,97.3 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<line fill="none" stroke="#E90000" stroke-miterlimit="10" x1="184.1" y1="132" x2="186.2" y2="122.6"/>
+		<g>
+			<polygon fill="#E90000" points="187.7,115.7 189.5,126.3 186.1,123.1 181.6,124.5 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<line fill="none" stroke="#E90000" stroke-miterlimit="10" x1="191.4" y1="100.5" x2="193.5" y2="91.1"/>
+		<g>
+			<polygon fill="#E90000" points="189.8,107.4 196,98.6 191.5,100 188,96.8 			"/>
+		</g>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 195.5242 90.5428)" fill="#E90000" font-family="'Menlo-Regular'" font-size="10">tickLengthMin</text>
+<g>
+	<g>
+		<line fill="none" stroke="#E90000" stroke-miterlimit="10" x1="198.6" y1="155.1" x2="203.4" y2="144.6"/>
+		<g>
+			<polygon fill="#E90000" points="206.4,138.2 205.9,149 203.2,145.1 198.5,145.6 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<line fill="none" stroke="#E90000" stroke-miterlimit="10" x1="219.1" y1="110.3" x2="224" y2="99.9"/>
+		<g>
+			<polygon fill="#E90000" points="216.2,116.7 224,109.4 219.4,109.9 216.7,106 			"/>
+		</g>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 224.9756 103.7178)" fill="#E90000" font-family="'Menlo-Regular'" font-size="10">tickLengthMaj</text>
+<line fill="none" stroke="#E90000" stroke-miterlimit="10" x1="69.4" y1="175.8" x2="85.2" y2="156.9"/>
+<line fill="none" stroke="#E90000" stroke-miterlimit="10" x1="75.7" y1="180.9" x2="91.5" y2="162"/>
+<text transform="matrix(1 0 0 1 88.2598 159.7889)" fill="#E90000" font-family="'Menlo-Regular'" font-size="10">needleTickGap</text>
+<line fill="none" stroke="#E90000" stroke-miterlimit="10" x1="153.2" y1="249.6" x2="169" y2="230.7"/>
+<g>
+	<g>
+		<line fill="none" stroke="#E90000" stroke-miterlimit="10" x1="161" y1="252.7" x2="173.9" y2="263.9"/>
+		<g>
+			<polygon fill="#E90000" points="155.6,248.1 160.5,257.6 161.3,253 165.8,251.5 			"/>
+		</g>
+		<g>
+			<polygon fill="#E90000" points="179.2,268.5 169,265.1 173.5,263.5 174.3,258.9 			"/>
+		</g>
+	</g>
+</g>
+<line fill="none" stroke="#E90000" stroke-miterlimit="10" x1="177.1" y1="271.5" x2="192.9" y2="252.6"/>
+<text transform="matrix(1 0 0 1 80.6934 270.6679)" fill="#E90000" font-family="'Menlo-Regular'" font-size="10">needleLengthNeg</text>
+<text transform="matrix(1 0 0 1 169.024 225.337)" fill="#E90000" font-family="'Menlo-Regular'" font-size="10">pivotRadius</text>
+<line fill="none" stroke="#E90000" stroke-miterlimit="10" x1="174.3" y1="249.6" x2="190.1" y2="230.7"/>
+<g>
+	<g>
+		<line fill="none" stroke="#E90000" stroke-miterlimit="10" x1="156.9" y1="222.1" x2="162.4" y2="226.5"/>
+		<g>
+			<polygon fill="#E90000" points="167.9,230.9 157.6,227.9 161.9,226.2 162.6,221.5 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<line fill="none" stroke="#E90000" stroke-miterlimit="10" x1="189.8" y1="243.2" x2="195.2" y2="247.6"/>
+		<g>
+			<polygon fill="#E90000" points="184.3,238.8 189.5,248.2 190.2,243.6 194.6,241.9 			"/>
+		</g>
+	</g>
+</g>
+</svg>
