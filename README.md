@@ -2,11 +2,13 @@
 
 **d3gauge.js** is an add-in for the [D3](http://d3js.org) javascript library for drawing gauges, based on the [google charts gauge](https://developers.google.com/chart/interactive/docs/gallery/gauge) and [this javascript implementation](http://tomerdoron.blogspot.nl/2011/12/google-style-gauges-using-d3js.html). Every aspect of a d3gauge (sizes, colours, fonts) can be customised by passing an object containing options (see below).  
 
-The gauge values can be asily updated, and the needle moves with an 'rubber-band' effect.  The gauge is a javascript object, so it is possible to have multiple gauges in one document.
+The gauge values can be easily updated, and the needle moves with an 'rubber-band' effect.  The gauge is a javascript object, so it is possible to have multiple gauges in one document.
 
 Styles are set by inline style arguments, rather than CSS classes so that (i) multiple gauges can have different styles and (ii) svg gauges can be saved as images using tools like [canvg](https://github.com/gabelerner/canvg)
 
 ![Example gauge](https://github.com/oliverbinns/d3gauge/blob/master/docs/example.png "Example gauge")
+
+I have written a more detailed post on how the code works on my blog, [here](http://oliverbinns.com/articles/D3js-gauge/), which includes a live example. There is a also a guide to rasterising the gauge as a png file in the browser [here](http://oliverbinns.com/articles/rasterising-SVG-in-the-browser/).
 
 ## Usage
 Add the d3gauge.js script to your site, along with the latest version of d3:
@@ -89,4 +91,4 @@ The following options can be set:
 * **unitsFont** - The font of the units text, at the bottom of the gauge
 
 ## More Info
-For more information on how the code works, see this [blog post](http://datamusing.com)
+For more information on how the code works, see this [blog post](http://oliverbinns.com/articles/D3js-gauge/)
