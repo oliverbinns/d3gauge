@@ -123,7 +123,7 @@ function drawGauge(opt) {
         .attr("id", "SVGbox-" + opt.divID)
         .attr("width", svgWidth)
         .attr("height", svgHeight)
-        .attr({'xmlns': 'http://www.w3.org/2000/svg','xmlns:xmlns:xlink': 'http://www.w3.org/1999/xlink'});
+        .attr({'xmlns': 'http://www.w3.org/2000/svg','xmlns:xlink': 'http://www.w3.org/1999/xlink'});
     
     //Draw the circles that make up the edge of the gauge
     var circleGroup = svg.append("svg:g")
@@ -151,7 +151,7 @@ function drawGauge(opt) {
     
     
     //Define two functions for calculating the coordinates of the major & minor tick mark paths
-    tickCalcMaj = function() {	
+    tickCalcMaj = function() {  
         function pathCalc(d,i) {
             //Offset the tick mark angle so zero is vertically down, then convert to radians
             var tickAngle = d + 90,
@@ -176,7 +176,7 @@ function drawGauge(opt) {
         return pathCalc;
     };
     
-    tickCalcMin = function() {	
+    tickCalcMin = function() {  
         function pathCalc(d,i) {
             //Offset the tick mark angle so zero is vertically down, then convert to radians
             var tickAngle = d + 90,
@@ -253,7 +253,7 @@ function drawGauge(opt) {
                 .data(tickAnglesMaj)
                 .enter().append("text")
                 .attr("x",function(d,i){return labelXcalc(d,i)})
-                .attr("y",function(d,i){return labelYcalc(d,i)})	
+                .attr("y",function(d,i){return labelYcalc(d,i)})    
                 .attr("font-size", opt.labelFontSize) 
                 .attr("text-anchor", "middle")
                 .style("fill", opt.tickLabelCol)
@@ -268,7 +268,7 @@ function drawGauge(opt) {
                 .data([0])
                 .enter().append("text")
                 .attr("x",function(d,i){return labelXcalc(d,i)})
-                .attr("y",function(d,i){return labelYcalc(d,i)})	
+                .attr("y",function(d,i){return labelYcalc(d,i)})    
                 .attr("font-size", opt.labelFontSize * 1.5) 
                 .attr("text-anchor", "middle")
                 .style("fill", opt.unitsLabelCol)
@@ -280,7 +280,7 @@ function drawGauge(opt) {
     var needleAngle = [opt.zeroNeedleAngle]
     
     //Define a function for calculating the coordinates of the needle paths (see tick mark equivalent)
-    needleCalc = function() {	
+    needleCalc = function() {   
             function pathCalc(d,i) {
                 var nAngleRad = dToR(d + 90)
                 
