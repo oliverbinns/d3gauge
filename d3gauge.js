@@ -73,7 +73,7 @@ function drawGauge(opt) {
     if(opt.labelFontSize < 6){opt.labelFontSize = 0}
         
     //Define a linear scale to convert values to needle displacement angle (degrees)
-    var valueScale = d3.scale.linear()
+    var valueScale = d3.scaleLinear()
             .domain([opt.minVal, opt.maxVal])
             .range([opt.zeroTickAngle, opt.maxTickAngle]);
     
@@ -118,13 +118,15 @@ function drawGauge(opt) {
     var svgWidth=opt.gaugeRadius * 2,
         svgHeight=opt.gaugeRadius * 2;
     
-    var svg = d3.select("#" + opt.divID)
+    d3.select("#" + opt.divID)
         .append("svg")
         .attr("id", "SVGbox-" + opt.divID)
         .attr("width", svgWidth)
         .attr("height", svgHeight)
         .attr({'xmlns': 'http://www.w3.org/2000/svg','xmlns:xlink': 'http://www.w3.org/1999/xlink'});
     
+    var svg = d3.select("#SVGbox-" + opt.divID);
+
     //Draw the circles that make up the edge of the gauge
     var circleGroup = svg.append("svg:g")
             .attr("id","circles")
@@ -165,7 +167,7 @@ function drawGauge(opt) {
                 lineData = [{"x": x1, "y": y1}, {"x": x2, "y": y2}];
 
             //Use a D3.JS path generator
-            var lineFunc = d3.svg.line()
+            var lineFunc = d3.line()
                 .x(function(d) {return d.x;})
                 .y(function(d) {return d.y;});
 
@@ -190,7 +192,7 @@ function drawGauge(opt) {
                 lineData = [{"x": x1, "y": y1}, {"x": x2, "y": y2}];
 
             //Use a D3.JS path generator
-            var lineFunc=d3.svg.line()
+            var lineFunc=d3.line()
                 .x(function(d) {return d.x;})
                 .y(function(d) {return d.y;});
 
@@ -291,7 +293,7 @@ function drawGauge(opt) {
                     
                     lineData = [{"x": x1, "y": y1}, {"x": x2, "y": y2}];
                 
-                var lineFunc=d3.svg.line()
+                var lineFunc=d3.line()
                     .x(function(d) {return d.x;})
                     .y(function(d) {return d.y;});
                 
@@ -320,7 +322,7 @@ function drawGauge(opt) {
     needlePath.transition()
         .duration(1000)
         //.delay(0)
-        .ease("elastic",1,0.9)
+        .ease(d3.easeElasticOut,1,0.9)
         //.attr("transform", function(d) 
         .attrTween("transform", function(d,i,a)
         {
@@ -337,7 +339,7 @@ function drawGauge(opt) {
 
     unitsLabel.transition()
     .duration(1000)
-    .ease("elastic",1,0.9)
+    .ease(d3.easeElasticOut,1,0.9)
     .tween("text", function(d) {
         var i = d3.interpolateString(opt.minVal, opt.needleVal)
 
@@ -356,7 +358,7 @@ function drawGauge(opt) {
             oldVal = opt.needleVal
         needlePath.transition()
             .duration(1000)
-            .ease("elastic",1,0.9)
+            .ease(d3.easeElasticOut,1,0.9)
             .attrTween("transform", function(d,i,a)
             {
                 needleAngleOld = valueScale(oldVal) - opt.zeroNeedleAngle
@@ -374,7 +376,7 @@ function drawGauge(opt) {
         
         unitsLabel.transition()
             .duration(1000)
-            .ease("elastic",1,0.9)
+            .ease(d3.easeElasticOut,1,0.9)
             .tween("text", function(d) {
                 var i = d3.interpolateString(oldVal, newVal)
                 
