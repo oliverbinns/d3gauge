@@ -10,6 +10,9 @@ Styles are set by inline style arguments, rather than CSS classes so that (i) mu
 
 I have written a more detailed post on how the code works on my blog, [here](http://oliverbinns.com/articles/D3js-gauge/), which includes a live example. There is a also a guide to rasterising the gauge as a png file in the browser [here](http://oliverbinns.com/articles/rasterising-SVG-in-the-browser/).
 
+## Requirements
+The current version of d3gauge works with d3 version 4 and 5.  If you need a version that works with d3 version 3 see commit 02d57bcbc5d10bfe853663c9f0b1442d5f63d265
+
 ## Usage
 Add the d3gauge.js script to your site, along with the latest version of d3:
 ```
