@@ -342,7 +342,7 @@ function drawGauge(opt) {
         var i = d3.interpolateString(opt.minVal, opt.needleVal)
 
         return function(t) {
-            this.textContent = Math.round(i(t)) + " " + opt.gaugeUnits;
+            unitsLabel.text(Math.round(i(t)) + " " + opt.gaugeUnits);
         };
     });
     
@@ -379,7 +379,7 @@ function drawGauge(opt) {
                 var i = d3.interpolateString(oldVal, newVal)
                 
                 return function(t) {
-                    this.textContent = Math.round(i(t)) + " " + opt.gaugeUnits;
+                    unitsLabel.text(Math.round(i(t)) + " " + opt.gaugeUnits);
                 };
         });
         
